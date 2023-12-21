@@ -1,12 +1,12 @@
 
 
 import React, { useRef } from "react";
-import { useGLTF, useAnimations } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import * as THREE from 'three';
 export default function BatteryModel(props) {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF("/battery.glb");
-  const { actions } = useAnimations(animations, group);
+  const { nodes, materials} = useGLTF("/battery.glb");
+
 
   // Function to change the color of a material based on temperature
   const changeMaterialColorByTemperature = (material, temperature) => {
